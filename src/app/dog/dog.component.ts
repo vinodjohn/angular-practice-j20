@@ -24,4 +24,8 @@ export class DogComponent implements OnInit {
 
     return dogs;
   }
+
+  addRandomDog() {
+    this.doggies = [...this.doggies, new Dog("Dalmier", 124, true)];
+  }
 }

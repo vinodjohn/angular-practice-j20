@@ -26,3 +26,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<button mat-raised-button color="primary" (mouseover)="addRandomDog()">Add Random Dog</button>
