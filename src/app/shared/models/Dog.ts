@@ -1,5 +1,4 @@
 export class Dog {
-
   name: string;
   heightInCm: number;
   isAlive: boolean;

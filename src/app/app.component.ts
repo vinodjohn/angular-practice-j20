@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Dog} from "./shared/models/Dog";
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'example';
   showContent = false;
+
+  dogTitle = "List of Dogs";
+
+  dogData(): Dog[] {
+    let dogs: Dog[] = [];
+
+    dogs.push(new Dog("Jack", 120, true));
+    dogs.push(new Dog("Julie", 110, false));
+
+    return dogs;
+  }
 }
