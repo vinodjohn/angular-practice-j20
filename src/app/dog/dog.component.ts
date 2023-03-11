@@ -7,9 +7,6 @@ import {Dog} from "../shared/models/Dog";
   styleUrls: ['./dog.component.css']
 })
 export class DogComponent implements OnInit{
-  @Input() title: string = "";
-  @Input() dogs: Dog[] = [];
-
   doggies: Dog[] = [];
   displayedColumns: string[] = ['name', 'heightInCm', 'isAlive'];
 
@@ -20,6 +17,17 @@ export class DogComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.doggies = this.dogs;
+    this.doggies = this.dogData();
+  }
+
+  title = "List of Dogs";
+
+  dogData(): Dog[] {
+    let dogs: Dog[] = [];
+
+    dogs.push(new Dog("Jack", 120, true));
+    dogs.push(new Dog("Julie", 110, false));
+
+    return dogs;
   }
 }
