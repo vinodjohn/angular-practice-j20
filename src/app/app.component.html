@@ -7,11 +7,23 @@
   />
   <span>Welcome</span>
     <div class="spacer"></div>
-    <span><a style="color: orange;" routerLink="/dog" routerLinkActive="active">Dog</a></span>
+ <!--   <span><a style="color: orange;" routerLink="/dog" routerLinkActive="active">Dog</a></span>
     <div class="spacer"></div>
     <span><a style="color: orange;" routerLink="/create-dog" routerLinkActive="active">Add dog</a></span>
     <div class="spacer"></div>
-    <span><a style="color: orange;" routerLink="/update-dog" routerLinkActive="active">Update dog</a></span>
+    <span><a style="color: orange;" routerLink="/update-dog" routerLinkActive="active">Update dog</a></span>-->
+
+
+  <div class="dropdown">
+    <button class="dropbtn">Dog</button>
+    <div class="dropdown-content">
+      <a style="color: orange;" routerLink="/dog" routerLinkActive="active">Dashboard</a>
+      <a style="color: orange;" routerLink="/create-dog" routerLinkActive="active">Add dog</a>
+      <a style="color: orange;" routerLink="/update-dog" routerLinkActive="active">Update dog</a>
+    </div>
+  </div>
+
+
 </div>
 
 <div class="content" role="main">
