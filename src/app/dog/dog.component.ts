@@ -22,4 +22,8 @@ export class DogComponent implements OnInit{
   deleteDog(id: number) {
     this.dogService.deleteDog(id).subscribe(value => this.ngOnInit());
   }
+
+  updateDog(id: number) {
+    // Call Update Form Component from here, and pass id value from here to Update Component
+  }
 }
