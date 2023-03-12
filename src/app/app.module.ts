@@ -8,6 +8,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {DogComponent} from "./dog/dog.component";
 import {DogFormComponent} from "./dog/dog-form/dog-form.component";
 import {UpdateDogFormComponent} from "./dog/update-dog-form/update-dog-form.component";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {AppInterceptor} from "./shared/interceptor/app.interceptor";
 
 const appRoutes: Routes = [
 /*  {
@@ -35,9 +37,14 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     DogModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AppInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

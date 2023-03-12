@@ -6,6 +6,7 @@ import {DogFormComponent} from "./dog-form/dog-form.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule} from "@angular/forms";
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -23,7 +24,8 @@ import {FormsModule} from "@angular/forms";
     CommonModule,
     MatTableModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ]
 })
 export class DogModule { }

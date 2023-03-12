@@ -1,5 +1,6 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Dog} from "../shared/models/Dog";
+import {DogService} from "../shared/services/dog.service";
 
 @Component({
   selector: 'app-dog',
@@ -8,26 +9,17 @@ import {Dog} from "../shared/models/Dog";
 })
 export class DogComponent implements OnInit{
   doggies: Dog[] = [];
-  displayedColumns: string[] = ['name', 'heightInCm', 'isAlive'];
+  displayedColumns: string[] = ['id', 'name', 'heightInCm', 'isAlive', 'actions'];
 
-  dogName: string[] =["Caesar", "Shadow"];
-
-  addRandomDog() {
-    this.doggies = [...this.doggies, new Dog("Dalmier", 124, true)];
+  constructor(private dogService: DogService) {
   }
-
   ngOnInit(): void {
-    this.doggies = this.dogData();
+    this.dogService.getAllDogs().subscribe(value => this.doggies = value);
   }
 
   title = "List of Dogs";
 
-  dogData(): Dog[] {
-    let dogs: Dog[] = [];
-
-    dogs.push(new Dog("Jack", 120, true));
-    dogs.push(new Dog("Julie", 110, false));
-
-    return dogs;
+  deleteDog(id: number) {
+    this.dogService.deleteDog(id).subscribe(value => this.ngOnInit());
   }
 }

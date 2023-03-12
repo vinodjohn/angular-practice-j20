@@ -15,7 +15,7 @@ export class DogFormComponent {
   dogs: Dog[] = [];
 
   addDog(dogForm: NgForm) {
-    this.dogs.push(new Dog(this.name, this.height, this.alive == 'yes'));
+    this.dogs.push(new Dog(0, this.name, this.height, this.alive == 'yes'));
     dogForm.reset();
   }
 }
